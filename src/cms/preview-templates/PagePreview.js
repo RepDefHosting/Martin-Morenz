@@ -37,6 +37,30 @@ const PagePreview = ({ entry, getAsset, widgetFor }) => {
     submit: entry.getIn(['data', 'formText', 'submit']) || '',
   }
 
+  // Homepage section toggles
+  const showBio = entry.getIn(['data', 'showBio']) !== false
+  const showSameAs = entry.getIn(['data', 'showSameAs']) !== false
+  const showPosts = entry.getIn(['data', 'showPosts']) !== false
+  const showPress = !!entry.getIn(['data', 'showPress'])
+  const showGallery = entry.getIn(['data', 'showGallery']) !== false
+  const showCTA = entry.getIn(['data', 'showCTA']) !== false
+
+  // Section eyebrow labels
+  const bioLabel = entry.getIn(['data', 'bioLabel']) || 'About'
+  const linksLabel = entry.getIn(['data', 'linksLabel']) || 'Find Me On'
+  const postsLabel = entry.getIn(['data', 'postsLabel']) || 'Latest Writing'
+  const pressLabel = entry.getIn(['data', 'pressLabel']) || 'As Seen In'
+  const galleryLabel = entry.getIn(['data', 'galleryLabel']) || 'Gallery'
+  const ctaLabel = entry.getIn(['data', 'ctaLabel']) || 'Get In Touch'
+
+  // CTA fields
+  const ctaHeadline = entry.getIn(['data', 'ctaHeadline']) || ''
+  const ctaBody = entry.getIn(['data', 'ctaBody']) || ''
+  const ctaButton = {
+    label: entry.getIn(['data', 'ctaButton', 'label']) || '',
+    link: entry.getIn(['data', 'ctaButton', 'link']) || '',
+  }
+
   return (
     <div className="londn">
       <PageTemplate
@@ -59,6 +83,24 @@ const PagePreview = ({ entry, getAsset, widgetFor }) => {
         pageContent={pageContent}
         isPreview={true}
         recentPosts={[]}
+        pressPosts={[]}
+        galleryPosts={[]}
+        sameAsItems={[]}
+        showBio={showBio}
+        showSameAs={showSameAs}
+        showPosts={showPosts}
+        showPress={showPress}
+        showGallery={showGallery}
+        showCTA={showCTA}
+        bioLabel={bioLabel}
+        linksLabel={linksLabel}
+        postsLabel={postsLabel}
+        pressLabel={pressLabel}
+        galleryLabel={galleryLabel}
+        ctaLabel={ctaLabel}
+        ctaHeadline={ctaHeadline}
+        ctaBody={ctaBody}
+        ctaButton={ctaButton}
         learnMoreButton={learnMoreButton}
         profileButton={profileButton}
         blogButton={blogButton}

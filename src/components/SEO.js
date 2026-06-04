@@ -34,10 +34,27 @@ const SEO = ({
     location,
     siteUrl,
     socialLinks: { twitter, facebook, linkedin, pinterest, instagram },
+    sameAs: sameAsList,
     fallbackImage,
   } = useSiteData()
 
   const image = featuredImage && featuredImage.src ? featuredImage.src : fallbackImage
+
+  // Build sameAs: merge explicit sameAs list URLs with social link URLs, deduped
+  const socialSameAs = [twitter, facebook, linkedin, pinterest, instagram]
+    .filter((item) => !!item && !!item.url && item.url.length)
+    .map((item) => item.url)
+  const listSameAs = Array.isArray(sameAsList)
+    ? sameAsList.filter((item) => !!item && !!item.url).map((item) => item.url)
+    : []
+  const mergedSameAs = [...new Set([...listSameAs, ...socialSameAs])]
+
+  // Title pattern: "[Full Name] — [Page Topic] | [siteName]"
+  // Guard: if pageTitle already contains the name, don't double-prefix
+  const titleContainsName = name && pageTitle && pageTitle.toLowerCase().includes(name.toLowerCase())
+  const formattedTitle = titleContainsName
+    ? `${pageTitle} | ${siteName || name}`
+    : `${name} — ${pageTitle} | ${siteName || name}`
 
   const schemaData = {
     templateKey,
@@ -53,9 +70,7 @@ const SEO = ({
     siteName,
     location,
     schemaType,
-    sameAs: [twitter, facebook, linkedin, pinterest, instagram].filter(
-      (item) => !!item && !!item.url && item.url.length,
-    ),
+    sameAs: mergedSameAs,
   }
 
   schemaData.image = !!image ? buildImage(image, siteUrl) : schemaData.fallbackImage
@@ -77,14 +92,14 @@ const SEO = ({
   return (
     <Helmet>
       <html lang="en" className={htmlClasses} />
-      <title>{pageTitle}</title>
+      <title>{formattedTitle}</title>
       <meta
         name="robots"
         content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
       />
       <meta name="description" content={metaDescription} />
       <meta property="og:type" content={schemaData.pageType} />
-      <meta property="og:title" content={pageTitle} />
+      <meta property="og:title" content={formattedTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:url" content={schemaData.url} />
       <meta property="og:image" content={schemaData.image.url} />
@@ -93,7 +108,7 @@ const SEO = ({
       )}
       <meta name="twitter:card" content="summary_large_image" />
       {!!twitterHandle && <meta name="twitter:site" content={twitterHandle} />}
-      <meta name="twitter:title" content={pageTitle} />
+      <meta name="twitter:title" content={formattedTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={schemaData.image.url} />
       <script type="application/ld+json">{ldjson}</script>

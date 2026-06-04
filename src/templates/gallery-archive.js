@@ -10,6 +10,7 @@ import { useSiteData } from '../hooks'
 
 export const GalleryArchiveTemplate = ({
   profileImage,
+  name,
   header,
   subheader,
   posts,
@@ -23,8 +24,9 @@ export const GalleryArchiveTemplate = ({
   return (
     <Fragment>
       <section className="sec-hero-sml">
+        {/* Pass empty header to Banner so it doesn't emit an h1 — we render one below */}
         <Banner
-          header={header}
+          header=""
           subheader={''}
           imageSrc={featuredImageSrc}
           imageAlt={!!featuredImage && !!featuredImage.alt ? featuredImage.alt : header}
@@ -35,10 +37,14 @@ export const GalleryArchiveTemplate = ({
       <section className="sec-picture-list">
         <div className="pg-width">
           <div className="content">
+            {/* SEO: single h1 with person's name for Google image pack */}
+            <h1 className="gallery-archive-title">
+              {name ? `${name} — Gallery` : header || 'Gallery'}
+            </h1>
             <div className="all-pics">
               <PhotoFeed isPreview={isPreview} posts={posts} />
             </div>
-            <div class="btn-row">
+            <div className="btn-row">
               {!!profileButton && (
                 <Link className="btn-primary" to={addTrailingSlash(profileButton.link)}>
                   {profileButton.label}
@@ -49,6 +55,7 @@ export const GalleryArchiveTemplate = ({
                   {blogButton.label}
                 </Link>
               )}
+              <Link className="btn-primary" to="/">← Home</Link>
             </div>
           </div>
         </div>
@@ -58,7 +65,7 @@ export const GalleryArchiveTemplate = ({
 }
 
 const GalleryArchive = ({ data }) => {
-  const { profileImage } = useSiteData()
+  const { profileImage, name } = useSiteData()
   const { header, subheader, featuredImage, profileButton, blogButton } = data.markdownRemark.frontmatter
   const posts = data.allMarkdownRemark.edges.map(({ node }) => {
     const {
@@ -76,6 +83,7 @@ const GalleryArchive = ({ data }) => {
   })
   const pageProps = {
     profileImage,
+    name,
     header,
     subheader,
     featuredImage,
@@ -93,7 +101,8 @@ const GalleryArchive = ({ data }) => {
 
 GalleryArchiveTemplate.propTypes = {
   profileImage: PropTypes.object,
-  header: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  header: PropTypes.string,
   subheader: PropTypes.string,
   posts: PropTypes.arrayOf(PropTypes.shape(postPropTypes)),
   featuredImage: featuredImagePropTypes,

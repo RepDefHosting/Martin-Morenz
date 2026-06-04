@@ -10,6 +10,12 @@ import PhotoFeed from './PhotoFeed'
 import HTMLContent from './HTMLContent'
 import InlineBackgroundImage from './InlineBackgroundImage'
 import Fonts from './Fonts'
+import HomeHero from './HomeHero'
+import SameAsRow from './SameAsRow'
+import PressStrip from './PressStrip'
+import GalleryPreview from './GalleryPreview'
+import ContactCTA from './ContactCTA'
+import SectionLabel from './SectionLabel'
 
 export {
   Layout,
@@ -24,4 +30,10 @@ export {
   HTMLContent,
   InlineBackgroundImage,
   Fonts,
+  HomeHero,
+  SameAsRow,
+  PressStrip,
+  GalleryPreview,
+  ContactCTA,
+  SectionLabel,
 }

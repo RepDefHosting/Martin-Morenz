@@ -25,6 +25,12 @@ export default () => {
               }
               alt
             }
+            shortBio
+            longBio
+            sameAs {
+              label
+              url
+            }
             siteUrl
             socialLinks {
               twitter {

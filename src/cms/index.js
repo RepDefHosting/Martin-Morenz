@@ -3,11 +3,13 @@ import uploadcare from 'netlify-cms-media-library-uploadcare'
 import cloudinary from 'netlify-cms-media-library-cloudinary'
 import blog from './collections/blog'
 import gallery from './collections/gallery'
+import press from './collections/press'
 import page from './collections/page'
 import meta from './collections/meta'
 import BlogPostPreview from './preview-templates/BlogPostPreview'
 import GalleryPostPreview from './preview-templates/GalleryPostPreview'
 import PagePreview from './preview-templates/PagePreview'
+import PressPostPreview from './preview-templates/PressPostPreview'
 
 import '../style/all.sass'
 
@@ -21,6 +23,21 @@ const pages = [
       'pageContent',
       'profileButton',
       'blogButton',
+      'showBio',
+      'showSameAs',
+      'showPosts',
+      'showPress',
+      'showGallery',
+      'showCTA',
+      'bioLabel',
+      'linksLabel',
+      'postsLabel',
+      'pressLabel',
+      'galleryLabel',
+      'ctaLabel',
+      'ctaHeadline',
+      'ctaBody',
+      'ctaButton',
       // 'missionStatement',
       // 'shortBiography',
       // 'learnMoreButton',
@@ -106,6 +123,7 @@ CMS.init({
       },
       blog,
       gallery,
+      press,
     ],
   },
 })
@@ -114,6 +132,7 @@ CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
 CMS.registerPreviewTemplate('gallery', GalleryPostPreview)
+CMS.registerPreviewTemplate('press', PressPostPreview)
 pages.forEach(({ templateKey }) => {
   CMS.registerPreviewTemplate(templateKey, PagePreview)
 })

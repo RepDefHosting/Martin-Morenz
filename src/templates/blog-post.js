@@ -59,7 +59,7 @@ export const BlogPostTemplate = ({
               inlineImages={inlineImages}
             />
 
-            <div class="btn-row">
+            <div className="btn-row">
               {!!blogButton && (
                 <Link className="btn-primary" to={addTrailingSlash(blogButton.link || '/blog')}>
                   {blogButton.label}
@@ -70,6 +70,7 @@ export const BlogPostTemplate = ({
                   {profileButton.label}
                 </Link>
               )}
+              <Link className="btn-ghost" to="/">← Home</Link>
             </div>
           </article>
         </div>

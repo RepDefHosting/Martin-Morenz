@@ -53,8 +53,8 @@ export default {
           label: 'Alt Text',
           name: 'alt',
           widget: 'string',
-          hint: "Describe what is shown in the image. This description is very important for SEO, don't leave it blank.",
-          required: false,
+          hint: "Required. Describe who is in the image and the context, e.g. 'Jane Smith speaking at TEDxBoston 2024'. Critical for SEO and accessibility.",
+          required: true,
         },
         // {
         //   label: 'Caption',

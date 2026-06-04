@@ -4,6 +4,13 @@ published: true
 name: Client Name
 jobTitle: Client's Job Title
 location: City, State, Country
+shortBio: "A brief 2–3 sentence bio that appears on the homepage. Write in the first person and keep it focused on your current role and expertise."
+longBio: ""
+sameAs:
+  - label: LinkedIn
+    url: https://www.linkedin.com
+  - label: Crunchbase
+    url: https://www.crunchbase.com
 profileImage:
   src: ""
   alt: Client's headshot
