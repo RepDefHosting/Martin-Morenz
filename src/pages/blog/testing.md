@@ -11,7 +11,7 @@ teaser: I’m an early riser, generally up by 6 am. I like to start my day with 
   run. I take a shower, grab a coffee, and listen to the news in the car on the
   way to the office.
 featuredImage:
-  src: /img/default-profile-female.png
+  src: /img/favicon.png
 profileButton:
   label: Home
   link: /
