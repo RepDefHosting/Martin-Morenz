@@ -30,7 +30,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       pageSlug: String
       pageTitle: String!
       metaDescription: String!
-      header: String!
+      header: String
       subheader: String
       date: Date @dateformat(formatString: "YYYY-MM-DDTHH:mm:ss.SSS")
       featuredImage: FeaturedImage
