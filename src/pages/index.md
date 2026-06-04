@@ -20,8 +20,8 @@ blogButton:
 showBio: true
 showSameAs: true
 showPosts: true
-showPress: false
-showGallery: true
+showPress: true
+showGallery: false
 showCTA: false
 bioLabel: About
 linksLabel: Find Me On
