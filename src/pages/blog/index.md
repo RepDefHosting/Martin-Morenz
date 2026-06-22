@@ -3,8 +3,8 @@ templateKey: blog-archive
 pageSlug: /blog
 pageTitle: Blog
 subheader: null
-metaDescription: In 2024, Jennifer Neitzel joined the firm of Powell Banz
-  Valuation as a member of the appraiser staff.
+metaDescription: "[Client Full Name] — articles, insights, and professional
+  updates."
 published: true
 schemaType: WebPage
 header: Blog
