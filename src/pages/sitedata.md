@@ -43,6 +43,6 @@ themeOptions:
 location: Winter Haven, FL, US
 sameAs: []
 fallbackImage: /img/pic-executive-main-banner-01.webp
-jobTitle: News Producer and Newscaster Winter Haven, FL
+jobTitle: News Producer and Newscaster
 siteAnalytics: null
 ---
