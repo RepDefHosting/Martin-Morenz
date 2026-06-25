@@ -2,8 +2,9 @@
 templateKey: index-page
 pageSlug: /
 pageTitle: Home
-metaDescription: "[Client Full Name] is a [Job Title] based in [Location]. This
-  is the official website and professional profile of [Client Full Name]."
+metaDescription: Martin Morenz is a News Producer and Newscaster based in Winter
+  Haven, FL. This is the official website and professional profile of Martin
+  Morenz.
 published: true
 schemaType: WebPage
 featuredImage:
@@ -33,4 +34,4 @@ ctaButton:
   label: Send a Message
   link: mailto:hello@example.com
 ---
-[Client Full Name] is a [Job Title] based in [Location]. Replace this placeholder text with a brief overview that will appear on the homepage.
+Martin Morenz has a background spanning news media and education. He taught in Newcastle, Maine, filling in for teachers and ensuring that Lincoln Academy students engaged with the curriculum and assignments in a well-ordered manner. Moreover, [Martin Morenz](https://martinmorenz.weebly.com/) capably led high school group work and monitored independent study, while submitting required reports and documentation at the end of the school day.
