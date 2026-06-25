@@ -1,39 +1,32 @@
 ---
 templateKey: site-data
 published: true
-name: "[Client Full Name]"
-jobTitle: "[Client Job Title]"
-location: "[City, State, Country]"
+name: Martin Morenz
+siteName: Martin Morenz
 profileImage:
   src: /img/client-headshot.jpg
-  alt: "[Client Full Name]"
-siteUrl: https://www.example.com
-siteAnalytics: null
-shortBio: "[2–3 sentence bio for the homepage. Keep it punchy and written in
-  third person. This will appear in the Bio Summary section below the hero.]"
-longBio: >-
-  [Full biography for the /profile/ page. Can span multiple paragraphs. Include
-  career history, achievements, education, and any personal details the client
-  wishes to share.]
-
-
-  [Second paragraph of the long bio.]
-
-
-  [Third paragraph — education, awards, or closing statement.]
+  alt: ""
+siteUrl: https://www.aboutmartinmorenz.com
+shortBio: Martin Morenz has a background spanning news media and education. He
+  taught in Newcastle, Maine, filling in for teachers and ensuring that Lincoln
+  Academy students engaged with the curriculum and assignments in a well-ordered
+  manner. Moreover, Martin Morenz capably led high school group work and
+  monitored independent study, while submitting required reports and
+  documentation at the end of the school day.
+longBio: ""
 socialLinks:
   twitter:
-    url: ""
+    url: https://x.com/martinmorenz
     label: Visit
-    show: false
+    show: true
   facebook:
     url: ""
     label: Visit
     show: false
   linkedin:
-    url: ""
+    url: https://www.linkedin.com/in/martin-morenz-824002196/
     label: Visit
-    show: false
+    show: true
   pinterest:
     url: null
     label: Visit
@@ -42,14 +35,14 @@ socialLinks:
     url: null
     label: Visit
     show: false
-siteName: "[Client Full Name]"
 favicon: /img/favicon.png
 themeOptions:
   colorScheme: londn
   fontScheme: muli
   showThemeSwitcher: false
-sameAs:
-  - label: LinkedIn
-    url: https://www.linkedin.com/in/example
+location: Winter Haven, FL, US
+sameAs: []
 fallbackImage: /img/pic-executive-main-banner-01.webp
+jobTitle: News Producer and Newscaster Winter Haven, FL
+siteAnalytics: null
 ---
